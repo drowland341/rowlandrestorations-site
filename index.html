@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Rowland Restorations</title>
+  <meta name="description" content="Rowland Restorations — builds, diagnostics, and practical learning for engines, ECUs, and tuning." />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body>
+
+  <header class="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="index.html">
+        <span class="brand-badge" aria-hidden="true"></span>
+        <span>Rowland Restorations</span>
+      </a>
+      <nav class="nav-links">
+        <a href="projects/index.html">Projects</a>
+        <a href="learn/index.html">Learn</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <section class="hero">
+      <div class="hero-card">
+        <h1>Builds, diagnostics, and no-BS learning.</h1>
+        <p>
+          I document real restoration projects—from classic cars to jet skis—and break down the engine and tuning side
+          in a way that actually makes sense.
+        </p>
+        <div class="btns">
+          <a class="btn primary" href="projects/index.html">View Projects</a>
+          <a class="btn" href="learn/getting-started.html">Start Learning</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Featured Projects</h2>
+      <p class="lead">Current builds and ongoing work. Click in for specs, progress, and videos.</p>
+
+      <div class="grid">
+        <a class="card" href="projects/camaro.html">
+          <h3>1969 Camaro</h3>
+          <p>Modern drivetrain + clean restoration with a focus on reliability and performance.</p>
+          <div class="meta">Updates, parts list, and progress</div>
+        </a>
+
+        <a class="card" href="projects/barracuda.html">
+          <h3>1974 Plymouth Barracuda</h3>
+          <p>Rust repair, structure, and bringing it back the right way—no shortcuts.</p>
+          <div class="meta">Body work, fabrication, and build plan</div>
+        </a>
+
+        <a class="card" href="projects/challenger.html">
+          <h3>1973 Dodge Challenger</h3>
+          <p>Full teardown and rebuild with a focus on clean metal and solid foundations.</p>
+          <div class="meta">Floor pans, welding, and restoration notes</div>
+        </a>
+
+        <a class="card" href="projects/jetskis.html">
+          <h3>Kawasaki Jet Skis (ECU + tuning)</h3>
+          <p>Diagnostics, ECU reverse engineering, CAN/K-Line work, and tuning experiments.</p>
+          <div class="meta">Tools, wiring, logs, and how-to</div>
+        </a>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Learn Engines & Tuning</h2>
+      <p class="lead">
+        If you’re starting from zero (or tired of vague answers), this is the guided path I wish I had.
+      </p>
+      <div class="grid">
+        <a class="card" href="learn/getting-started.html">
+          <h3>Getting Started</h3>
+          <p>What an ECU does, why sensors matter, and what “tuning” really means.</p>
+          <div class="meta">Best first read</div>
+        </a>
+        <a class="card" href="learn/engines.html">
+          <h3>Engines 101</h3>
+          <p>Air, fuel, spark, compression—how power happens and what can go wrong.</p>
+          <div class="meta">Core concepts</div>
+        </a>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="footer-row">
+        <div>© <span id="year"></span> Rowland Restorations</div>
+        <div>
+          <a href="projects/index.html">Projects</a> ·
+          <a href="learn/index.html">Learn</a> ·
+          <a href="contact.html">Contact</a>
+        </div>
+      </div>
+    </footer>
+
+  </main>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
