@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Getting Started | Learn | Rowland Restorations</title>
+  <meta name="description" content="A practical beginner path for engines and tuning." />
+  <link rel="stylesheet" href="../assets/css/styles.css" />
+</head>
+<body>
+  <header class="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="../index.html"><span class="brand-badge"></span><span>Rowland Restorations</span></a>
+      <nav class="nav-links">
+        <a href="../projects/index.html">Projects</a>
+        <a href="index.html">Learn</a>
+        <a href="../about.html">About</a>
+        <a href="../contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container page">
+    <div class="panel">
+      <h1>Getting Started (Engines & Tuning)</h1>
+      <p style="color:var(--muted); max-width:90ch;">
+        If you’re new, “tuning” can feel like a black box. This page is the roadmap. You’ll learn what matters,
+        what to ignore at first, and how to build confidence without blowing stuff up.
+      </p>
+
+      <h2 style="margin-top:22px;">The 3 things an engine needs</h2>
+      <ul style="color:var(--muted); max-width:90ch;">
+        <li><b>Air</b> (measured/estimated)</li>
+        <li><b>Fuel</b> (delivered accurately)</li>
+        <li><b>Spark</b> (at the right time — on gas engines)</li>
+      </ul>
+      <p style="color:var(--muted); max-width:90ch;">
+        Tuning is basically: “How much fuel?” and “When do we spark?” (and sometimes “How much boost?”).
+      </p>
+
+      <h2 style="margin-top:22px;">What the ECU does</h2>
+      <p style="color:var(--muted); max-width:90ch;">
+        The ECU is a calculator. It reads sensors, looks up tables (maps), applies corrections, then commands outputs:
+        injectors, ignition coils, throttle, idle, boost control, etc.
+      </p>
+
+      <h2 style="margin-top:22px;">The sensors you should understand first</h2>
+      <div class="grid" style="margin-top:10px;">
+        <div class="card">
+          <h3>RPM + crank signal</h3>
+          <p>Without a clean crank signal, nothing else matters.</p>
+          <div class="meta">Foundation</div>
+        </div>
+        <div class="card">
+          <h3>MAP or MAF</h3>
+          <p>How the engine load is measured (airflow / pressure).</p>
+          <div class="meta">Load calculation</div>
+        </div>
+        <div class="card">
+          <h3>TPS</h3>
+          <p>Driver demand + transient fueling (tip-in / tip-out).</p>
+          <div class="meta">Throttle behavior</div>
+        </div>
+        <div class="card">
+          <h3>Coolant + intake air temp</h3>
+          <p>Cold start enrichment and safety corrections.</p>
+          <div class="meta">Warmup + protection</div>
+        </div>
+        <div class="card" style="grid-column: span 12;">
+          <h3>Wideband O2 (optional but huge)</h3>
+          <p>
+            A wideband lets you see AFR so you can make safe fueling changes. If you want to tune seriously,
+            this is one of the best investments.
+          </p>
+          <div class="meta">Makes tuning 10x easier</div>
+        </div>
+      </div>
+
+      <h2 style="margin-top:22px;">The safe beginner sequence</h2>
+      <ol style="color:var(--muted); max-width:90ch;">
+        <li><b>Learn engine basics</b> (air/fuel/spark/compression). <a href="engines.html">Engines 101 →</a></li>
+        <li><b>Learn what “load” means</b> (MAP/MAF and why it matters).</li>
+        <li><b>Fueling basics</b> (AFR targets, closed loop vs open loop).</li>
+        <li><b>Ignition basics</b> (timing, knock, what’s safe).</li>
+        <li><b>Logging</b> (make one change at a time, record before/after).</li>
+      </ol>
+
+      <h2 style="margin-top:22px;">What to avoid early</h2>
+      <ul style="color:var(--muted); max-width:90ch;">
+        <li>Changing a bunch of tables at once</li>
+        <li>Chasing “perfect AFR” while ignoring timing/knock</li>
+        <li>Assuming the internet’s “safe timing” is safe for your exact setup</li>
+        <li>WOT pulls without good data/logging</li>
+      </ul>
+
+      <div class="btns" style="margin-top:18px;">
+        <a class="btn primary" href="engines.html">Next: Engines 101</a>
+        <a class="btn" href="tuning.html">Or jump to: Tuning 101</a>
+      </div>
+    </div>
+  </main>
+</body>
+</html>

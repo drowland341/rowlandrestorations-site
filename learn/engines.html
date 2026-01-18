@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Engines 101 | Learn | Rowland Restorations</title>
+  <meta name="description" content="Engine fundamentals explained simply: air, fuel, spark, compression." />
+  <link rel="stylesheet" href="../assets/css/styles.css" />
+</head>
+<body>
+  <header class="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="../index.html"><span class="brand-badge"></span><span>Rowland Restorations</span></a>
+      <nav class="nav-links">
+        <a href="../projects/index.html">Projects</a>
+        <a href="index.html">Learn</a>
+        <a href="../about.html">About</a>
+        <a href="../contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container page">
+    <div class="panel">
+      <h1>Engines 101</h1>
+      <p style="color:var(--muted); max-width:90ch;">
+        Engines look complicated until you simplify them. Here’s the core: an engine is an air pump.
+        Power is how effectively it moves air and turns that into pressure on the piston.
+      </p>
+
+      <h2 style="margin-top:22px;">The 4 strokes (quick)</h2>
+      <ul style="color:var(--muted); max-width:90ch;">
+        <li><b>Intake:</b> air enters</li>
+        <li><b>Compression:</b> air/fuel is squeezed</li>
+        <li><b>Power:</b> combustion pushes piston</li>
+        <li><b>Exhaust:</b> spent gases leave</li>
+      </ul>
+
+      <h2 style="margin-top:22px;">Air (load) is everything</h2>
+      <p style="color:var(--muted); max-width:90ch;">
+        The ECU needs to know how much air the engine is taking in. That “engine load” can be measured by:
+        <b>MAF</b> (direct airflow) or estimated with <b>MAP</b> (manifold pressure) + RPM + temp.
+      </p>
+
+      <h2 style="margin-top:22px;">Fuel: more isn’t safer forever</h2>
+      <p style="color:var(--muted); max-width:90ch;">
+        Fuel cools combustion, but too rich can wash cylinders, foul plugs, and reduce power. Too lean can raise temps
+        and increase knock risk. The goal is “right fuel for the situation.”
+      </p>
+
+      <h2 style="margin-top:22px;">Spark timing: the silent power maker</h2>
+      <p style="color:var(--muted); max-width:90ch;">
+        Timing is when the spark occurs relative to piston position. Too advanced can cause knock. Too retarded makes it
+        feel lazy and hot. The goal is peak cylinder pressure at the right moment.
+      </p>
+
+      <h2 style="margin-top:22px;">Compression + mechanical health</h2>
+      <p style="color:var(--muted); max-width:90ch;">
+        Before tuning, make sure the engine is healthy. Tuning can’t fix bad compression, weak fuel pressure,
+        vacuum leaks, or failing ignition parts.
+      </p>
+
+      <h2 style="margin-top:22px;">Basic troubleshooting mindset</h2>
+      <div class="grid" style="margin-top:10px;">
+        <div class="card">
+          <h3>Air leak?</h3>
+          <p>Vacuum leaks or boost leaks = weird fueling, weird idle, weird everything.</p>
+        </div>
+        <div class="card">
+          <h3>Fuel delivery?</h3>
+          <p>Clogged filter, weak pump, injector issues, incorrect pressure.</p>
+        </div>
+        <div class="card">
+          <h3>Ignition strength?</h3>
+          <p>Plugs/coils/wires, incorrect gap, misfire under load.</p>
+        </div>
+        <div class="card">
+          <h3>Bad sensor?</h3>
+          <p>MAP/MAF/TPS readings that don’t match reality will ruin tuning.</p>
+        </div>
+      </div>
+
+      <div class="btns" style="margin-top:18px;">
+        <a class="btn primary" href="tuning.html">Next: Tuning 101</a>
+        <a class="btn" href="getting-started.html">Back: Getting Started</a>
+      </div>
+    </div>
+  </main>
+</body>
+</html>

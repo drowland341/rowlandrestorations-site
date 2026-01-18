@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Tuning 101 | Learn | Rowland Restorations</title>
+  <meta name="description" content="Tuning basics: fueling, ignition, logging, and safe changes." />
+  <link rel="stylesheet" href="../assets/css/styles.css" />
+</head>
+<body>
+  <header class="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="../index.html"><span class="brand-badge"></span><span>Rowland Restorations</span></a>
+      <nav class="nav-links">
+        <a href="../projects/index.html">Projects</a>
+        <a href="index.html">Learn</a>
+        <a href="../about.html">About</a>
+        <a href="../contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container page">
+    <div class="panel">
+      <h1>Tuning 101</h1>
+      <p style="color:var(--muted); max-width:90ch;">
+        “Tuning” is just calibrating how the ECU responds to load and RPM. You’re adjusting tables so the engine gets
+        the right fuel and timing for each operating condition.
+      </p>
+
+      <h2 style="margin-top:22px;">Two big categories</h2>
+      <div class="grid" style="margin-top:10px;">
+        <div class="card">
+          <h3>Fueling</h3>
+          <p>How much fuel the ECU commands at each load/RPM cell.</p>
+          <div class="meta">AFR targets + corrections</div>
+        </div>
+        <div class="card">
+          <h3>Ignition</h3>
+          <p>When the spark occurs (timing) at each load/RPM cell.</p>
+          <div class="meta">Power + knock control</div>
+        </div>
+      </div>
+
+      <h2 style="margin-top:22px;">Closed-loop vs open-loop</h2>
+      <p style="color:var(--muted); max-width:90ch;">
+        <b>Closed-loop</b> means the ECU uses O2 feedback to correct fueling. <b>Open-loop</b> means it follows the map
+        without feedback (common in WOT or certain conditions). Knowing which mode you’re in matters.
+      </p>
+
+      <h2 style="margin-top:22px;">Logging (how to not get lost)</h2>
+      <ol style="color:var(--muted); max-width:90ch;">
+        <li>Make <b>one change</b>.</li>
+        <li>Do the <b>same test</b> (same gear, similar temps, similar conditions).</li>
+        <li>Compare logs: before vs after.</li>
+        <li>If it got worse, revert. Don’t “stack guesses.”</li>
+      </ol>
+
+      <h2 style="margin-top:22px;">A simple safe workflow</h2>
+      <ul style="color:var(--muted); max-width:90ch;">
+        <li><b>Start with mechanical health</b> (no leaks, good fuel pressure, good ignition).</li>
+        <li><b>Get idle and cruise stable</b> first.</li>
+        <li><b>Then work into moderate load</b> areas before WOT.</li>
+        <li><b>Save versions</b> of your tune as you go (v1, v2, v3…)</li>
+      </ul>
+
+      <h2 style="margin-top:22px;">What you need (minimum kit)</h2>
+      <div class="grid" style="margin-top:10px;">
+        <div class="card">
+          <h3>Logging tool</h3>
+          <p>Something that records RPM, load, temps, fueling, and timing.</p>
+        </div>
+        <div class="card">
+          <h3>Wideband (recommended)</h3>
+          <p>So you can see AFR instead of guessing.</p>
+        </div>
+        <div class="card">
+          <h3>Knock awareness</h3>
+          <p>Use ECU knock data if available; otherwise be conservative.</p>
+        </div>
+        <div class="card">
+          <h3>Patience</h3>
+          <p>Tuning is discipline. Rushing is how parts get expensive.</p>
+        </div>
+      </div>
+
+      <div class="btns" style="margin-top:18px;">
+        <a class="btn" href="engines.html">Back: Engines 101</a>
+        <a class="btn primary" href="../projects/jetskis.html">Example: Jet Ski ECU Work</a>
+      </div>
+    </div>
+  </main>
+</body>
+</html>
