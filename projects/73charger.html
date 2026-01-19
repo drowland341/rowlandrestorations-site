@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>1973 Charger | Rowland Restorations</title>
+  <link rel="stylesheet" href="../assets/css/styles.css" />
+</head>
+
+<body>
+  <!-- NAV -->
+  <header class="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="../index.html">
+        <span class="brand-badge" aria-hidden="true"></span>
+        <span>Rowland Restorations</span>
+      </a>
+
+      <nav class="nav-links">
+        <a href="../projects/index.html">Projects</a>
+        <a href="../learn/index.html">Learn</a>
+        <a href="../about.html">About</a>
+        <a href="../contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- PAGE -->
+  <main class="page">
+    <div class="container">
+      <section class="panel">
+        <h1 style="margin-top:0;">1973 Charger</h1>
+        <p style="color:var(--muted); margin-top:6px; max-width:70ch;">
+          Photos + build overview. Click the main image (or any thumbnail) to open the lightbox.
+        </p>
+
+        <!-- HERO GRID -->
+        <div class="hero-block" style="margin-top:18px;">
+          <!-- Main image (click opens lightbox) -->
+          <div class="hero-main" data-index="0">
+            <img
+              src="https://vegemuaddgrumtftxwzv.supabase.co/storage/v1/object/public/projects/1973-charger/hero/1973charger_001.jpeg"
+              alt="1973 Charger hero image 1"
+              loading="eager"
+            />
+          </div>
+
+          <!-- Thumbnails -->
+          <div class="hero-thumbs">
+            <div class="hero-thumb" data-index="0">
+              <img src="https://vegemuaddgrumtftxwzv.supabase.co/storage/v1/object/public/projects/1973-charger/hero/1973charger_001.jpeg" alt="1973 Charger thumbnail 1" loading="lazy" />
+            </div>
+
+            <div class="hero-thumb" data-index="1">
+              <img src="https://vegemuaddgrumtftxwzv.supabase.co/storage/v1/object/public/projects/1973-charger/hero/1973charger_002.jpeg" alt="1973 Charger thumbnail 2" loading="lazy" />
+            </div>
+
+            <div class="hero-thumb" data-index="2">
+              <img src="https://vegemuaddgrumtftxwzv.supabase.co/storage/v1/object/public/projects/1973-charger/hero/1973charger_003.jpeg" alt="1973 Charger thumbnail 3" loading="lazy" />
+            </div>
+
+            <div class="hero-thumb" data-index="3">
+              <img src="https://vegemuaddgrumtftxwzv.supabase.co/storage/v1/object/public/projects/1973-charger/hero/1973charger_004.jpg" alt="1973 Charger thumbnail 4" loading="lazy" />
+            </div>
+
+            <div class="hero-thumb" data-index="4">
+              <img src="https://vegemuaddgrumtftxwzv.supabase.co/storage/v1/object/public/projects/1973-charger/hero/1973charger_005.jpg" alt="1973 Charger thumbnail 5" loading="lazy" />
+            </div>
+
+            <div class="hero-thumb" data-index="5">
+              <img src="https://vegemuaddgrumtftxwzv.supabase.co/storage/v1/object/public/projects/1973-charger/hero/1973charger_006.jpeg" alt="1973 Charger thumbnail 6" loading="lazy" />
+            </div>
+
+            <div class="hero-thumb" data-index="6">
+              <img src="https://vegemuaddgrumtftxwzv.supabase.co/storage/v1/object/public/projects/1973-charger/hero/1973charger_007.jpeg" alt="1973 Charger thumbnail 7" loading="lazy" />
+            </div>
+
+            <div class="hero-thumb" data-index="7">
+              <img src="https://vegemuaddgrumtftxwzv.supabase.co/storage/v1/object/public/projects/1973-charger/hero/1973charger_008.jpeg" alt="1973 Charger thumbnail 8" loading="lazy" />
+            </div>
+
+            <div class="hero-thumb" data-index="8">
+              <img src="https://vegemuaddgrumtftxwzv.supabase.co/storage/v1/object/public/projects/1973-charger/hero/1973charger_009.jpeg" alt="1973 Charger thumbnail 9" loading="lazy" />
+            </div>
+          </div>
+        </div>
+
+        <!-- Actions -->
+        <div style="margin-top:18px;">
+          <a class="btn" href="../projects/index.html">← Back to Projects</a>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-row">
+      <div>© <span id="year"></span> Rowland Restorations</div>
+      <div>
+        <a href="../contact.html">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- LIGHTBOX -->
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <div class="lightbox__backdrop" id="lbBackdrop"></div>
+
+    <div class="lightbox__content">
+      <button class="lightbox__close" id="lbClose" aria-label="Close">✕</button>
+      <button class="lightbox__nav lightbox__prev" id="lbPrev" aria-label="Previous">‹</button>
+      <img class="lightbox__img" id="lbImg" alt="" />
+      <button class="lightbox__nav lightbox__next" id="lbNext" aria-label="Next">›</button>
+      <div class="lightbox__caption" id="lbCaption"></div>
+    </div>
+  </div>
+
+  <script>
+    // Footer year
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Hero images list (make sure these match your Supabase filenames)
+    const HERO_IMAGES = [
+      "https://vegemuaddgrumtftxwzv.supabase.co/storage/v1/object/public/projects/1973-charger/hero/1973charger_001.jpeg",
+      "https://vegemuaddgrumtftxwzv.supabase.co/storage/v1/object/public/projects/1973-charger/hero/1973charger_002.jpeg",
+      "https://vegemuaddgrumtftxwzv.supabase.co/storage/v1/object/public/projects/1973-charger/hero/1973charger_003.jpeg",
+      "https://vegemuaddgrumtftxwzv.supabase.co/storage/v1/object/public/projects/1973-charger/hero/1973charger_004.jpg",
+      "https://vegemuaddgrumtftxwzv.supabase.co/storage/v1/object/public/projects/1973-charger/hero/1973charger_005.jpg",
+      "https://vegemuaddgrumtftxwzv.supabase.co/storage/v1/object/public/projects/1973-charger/hero/1973charger_006.jpeg",
+      "https://vegemuaddgrumtftxwzv.supabase.co/storage/v1/object/public/projects/1973-charger/hero/1973charger_007.jpeg",
+      "https://vegemuaddgrumtftxwzv.supabase.co/storage/v1/object/public/projects/1973-charger/hero/1973charger_008.jpeg",
+      "https://vegemuaddgrumtftxwzv.supabase.co/storage/v1/object/public/projects/1973-charger/hero/1973charger_009.jpeg",
+    ];
+
+    const lightbox = document.getElementById("lightbox");
+    const lbImg = document.getElementById("lbImg");
+    const lbCaption = document.getElementById("lbCaption");
+    const lbBackdrop = document.getElementById("lbBackdrop");
+    const lbClose = document.getElementById("lbClose");
+    const lbPrev = document.getElementById("lbPrev");
+    const lbNext = document.getElementById("lbNext");
+
+    let currentIndex = 0;
+
+    function openLightbox(index) {
+      currentIndex = index;
+      lbImg.src = HERO_IMAGES[currentIndex];
+      lbImg.alt = `1973 Charger hero image ${currentIndex + 1}`;
+      lbCaption.textContent = `Photo ${currentIndex + 1} of ${HERO_IMAGES.length}`;
+
+      lightbox.classList.add("is-open");
+      document.body.classList.add("no-scroll");
+      lightbox.setAttribute("aria-hidden", "false");
+    }
+
+    function closeLightbox() {
+      lightbox.classList.remove("is-open");
+      document.body.classList.remove("no-scroll");
+      lightbox.setAttribute("aria-hidden", "true");
+      lbImg.src = "";
+    }
+
+    function prevImage() {
+      currentIndex = (currentIndex - 1 + HERO_IMAGES.length) % HERO_IMAGES.length;
+      openLightbox(currentIndex);
+    }
+
+    function nextImage() {
+      currentIndex = (currentIndex + 1) % HERO_IMAGES.length;
+      openLightbox(currentIndex);
+    }
+
+    // Click main image + thumbnails (robust)
+    document.addEventListener("click", (e) => {
+      const target = e.target.closest(".hero-main, .hero-thumb");
+      if (!target) return;
+
+      const raw = target.getAttribute("data-index");
+      let idx = raw === null ? 0 : parseInt(raw, 10);
+      if (Number.isNaN(idx)) idx = 0;
+
+      openLightbox(idx);
+    });
+
+    // Controls
+    lbBackdrop.addEventListener("click", closeLightbox);
+    lbClose.addEventListener("click", closeLightbox);
+    lbPrev.addEventListener("click", (e) => { e.stopPropagation(); prevImage(); });
+    lbNext.addEventListener("click", (e) => { e.stopPropagation(); nextImage(); });
+
+    // Keyboard
+    window.addEventListener("keydown", (e) => {
+      if (!lightbox.classList.contains("is-open")) return;
+
+      if (e.key === "Escape") closeLightbox();
+      if (e.key === "ArrowLeft") prevImage();
+      if (e.key === "ArrowRight") nextImage();
+    });
+  </script>
+</body>
+</html>

@@ -26,29 +26,13 @@
         This is where I track each build: what I’m doing, why I’m doing it, and the parts/decisions along the way.
       </p>
 
-      <div class="grid" style="margin-top:14px;">
-        <a class="card" href="camaro.html">
-          <h3>1969 Camaro</h3>
-          <p>Performance-focused restoration + modern drivetrain.</p>
-          <div class="meta">Build overview</div>
-        </a>
-        <a class="card" href="barracuda.html">
-          <h3>1974 Plymouth Barracuda</h3>
-          <p>Rust repair, structure, and clean foundations.</p>
-          <div class="meta">Build overview</div>
-        </a>
-        <a class="card" href="challenger.html">
-          <h3>1973 Dodge Challenger</h3>
-          <p>Metal work, teardown, and rebuild notes.</p>
-          <div class="meta">Build overview</div>
-        </a>
-        <a class="card" href="jetskis.html">
-          <h3>Kawasaki Jet Skis</h3>
-          <p>ECU diagnostics + tuning experiments.</p>
-          <div class="meta">Bench setup, tooling, protocols</div>
-        </a>
-      </div>
+      <!-- JS injects the cards here -->
+      <div id="projectsGrid" class="grid" style="margin-top:14px;"></div>
     </div>
   </main>
+
+  <!-- Load data first, then render -->
+  <script src="../assets/js/projects.js"></script>
+  <script src="../assets/js/projects-render.js"></script>
 </body>
 </html>

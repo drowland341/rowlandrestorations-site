@@ -37,7 +37,7 @@
         <!-- HERO GRID -->
         <div class="hero-block" style="margin-top:18px;">
           <!-- Main image (click opens lightbox) -->
-          <div class="hero-main" data-index="0">
+          <div class="hero-main" data-index="8">
             <img
               src="https://vegemuaddgrumtftxwzv.supabase.co/storage/v1/object/public/projects/1969-camaro/hero/img_009.jpeg"
               alt="1969 Camaro hero image 9"
@@ -75,15 +75,15 @@
               <img src="https://vegemuaddgrumtftxwzv.supabase.co/storage/v1/object/public/projects/1969-camaro/hero/img_007.jpeg" alt="1969 Camaro thumbnail 7" loading="lazy" />
             </div>
 
-            <div class="hero-thumb" data-index="5">
+            <div class="hero-thumb" data-index="7">
               <img src="https://vegemuaddgrumtftxwzv.supabase.co/storage/v1/object/public/projects/1969-camaro/hero/img_008.jpeg" alt="1969 Camaro thumbnail 8" loading="lazy" />
             </div>
 
-            <div class="hero-thumb" data-index="5">
+            <div class="hero-thumb" data-index="8">
               <img src="https://vegemuaddgrumtftxwzv.supabase.co/storage/v1/object/public/projects/1969-camaro/hero/img_009.jpeg" alt="1969 Camaro thumbnail 9" loading="lazy" />
             </div>
 
-            <div class="hero-thumb" data-index="5">
+            <div class="hero-thumb" data-index="9">
               <img src="https://vegemuaddgrumtftxwzv.supabase.co/storage/v1/object/public/projects/1969-camaro/hero/img_010.jpeg" alt="1969 Camaro thumbnail 10" loading="lazy" />
             </div>
         </div>
@@ -177,12 +177,16 @@
       openLightbox(currentIndex);
     }
 
-    // Click main image + thumbnails
-    document.querySelectorAll(".hero-main, .hero-thumb").forEach(el => {
-      el.addEventListener("click", () => {
-        const idx = Number(el.getAttribute("data-index")) || 0;
-        openLightbox(idx);
-      });
+      // Click main image + thumbnails (robust)
+    document.addEventListener("click", (e) => {
+      const target = e.target.closest(".hero-main, .hero-thumb");
+      if (!target) return;
+
+      const raw = target.getAttribute("data-index");
+      let idx = raw === null ? 0 : parseInt(raw, 10);
+      if (Number.isNaN(idx)) idx = 0;
+
+      openLightbox(idx);
     });
 
     // Controls

@@ -165,11 +165,18 @@
       openLightbox(currentIndex);
     }
 
-    document.querySelectorAll(".hero-main, .hero-thumb").forEach(el => {
-      el.addEventListener("click", () => {
-        openLightbox(Number(el.dataset.index));
-      });
+    // Click main image + thumbnails (robust)
+    document.addEventListener("click", (e) => {
+      const target = e.target.closest(".hero-main, .hero-thumb");
+      if (!target) return;
+
+      const raw = target.getAttribute("data-index");
+      let idx = raw === null ? 0 : parseInt(raw, 10);
+      if (Number.isNaN(idx)) idx = 0;
+
+      openLightbox(idx);
     });
+
 
     lbBackdrop.addEventListener("click", closeLightbox);
     lbClose.addEventListener("click", closeLightbox);

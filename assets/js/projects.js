@@ -1,0 +1,60 @@
+// assets/js/projects.js
+
+window.RR_PROJECTS = [
+  {
+    id: "1969-camaro",
+    title: "1969 Camaro",
+    page: "camaro.html",
+    blurb: "Performance-focused restoration + modern drivetrain.",
+    meta: "Photos + build overview",
+    featured: true,
+  },
+  {
+    id: "1974-barracuda",
+    title: "1974 Plymouth Barracuda",
+    page: "barracuda.html",
+    blurb: "Rust repair, structure, and clean foundations.",
+    meta: "Photos + build overview",
+    featured: true,
+  },
+  {
+    id: "1973-challenger",
+    title: "1973 Dodge Challenger",
+    page: "challenger.html",
+    blurb: "Metal work, teardown, and rebuild notes.",
+    meta: "Photos + build overview",
+    featured: true,
+  },
+  {
+    id: "1972-charger",
+    title: "1972 Charger",
+    page: "72charger.html",
+    blurb: "Progress photos and build notes as it comes together.",
+    meta: "Photos + build overview",
+    featured: true,
+  },
+  {
+    id: "1972-chevelle",
+    title: "1972 Chevelle",
+    page: "72chevelle.html",
+    blurb: "Build overview with photos and updates.",
+    meta: "Photos + build overview",
+    featured: false,
+  },
+  {
+    id: "1973-charger",
+    title: "1973 Charger",
+    page: "73charger.html",
+    blurb: "Build overview with photos and updates.",
+    meta: "Photos + build overview",
+    featured: false,
+  },
+  {
+    id: "jetskis",
+    title: "Kawasaki Jet Skis",
+    page: "jetskis.html",
+    blurb: "ECU diagnostics + tuning experiments.",
+    meta: "Photos + build overview",
+    featured: true,
+  },
+];
