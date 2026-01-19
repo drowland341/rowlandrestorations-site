@@ -139,3 +139,124 @@ a:hover{color:var(--accent)}
   .card{grid-column: span 12}
   .hero-card{padding:22px}
 }
+
+/* Hero image grid */
+.hero-block {
+  display: grid;
+  gap: 16px;
+  align-items: start;
+}
+
+/* Desktop layout: main image + thumbs side-by-side */
+@media (min-width: 900px){
+  .hero-block{
+    grid-template-columns: 2fr 1fr;
+  }
+}
+
+.hero-main {
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.12);
+  cursor: pointer;
+}
+
+.hero-main img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.hero-thumbs {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+  gap: 10px;
+}
+
+.hero-thumb {
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.12);
+  cursor: pointer;
+}
+
+.hero-thumb img {
+  width: 100%;
+  height: 100px;
+  object-fit: cover;
+  display: block;
+}
+
+/* Lightbox modal */
+.no-scroll { overflow: hidden; }
+
+.lightbox {
+  position: fixed;
+  inset: 0;
+  display: none;
+  z-index: 9999;
+}
+
+.lightbox.is-open { display: block; }
+
+.lightbox__backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.85);
+}
+
+.lightbox__content {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+}
+
+.lightbox__img {
+  max-width: min(1100px, 95vw);
+  max-height: 80vh;
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,0.18);
+  background: #111;
+}
+
+.lightbox__close {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  font-size: 22px;
+  background: rgba(255,255,255,0.12);
+  border: 1px solid rgba(255,255,255,0.2);
+  color: #fff;
+  border-radius: 12px;
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+.lightbox__nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 48px;
+  background: rgba(255,255,255,0.10);
+  border: 1px solid rgba(255,255,255,0.18);
+  color: #fff;
+  border-radius: 14px;
+  padding: 2px 14px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.lightbox__prev { left: 16px; }
+.lightbox__next { right: 16px; }
+
+.lightbox__caption {
+  position: absolute;
+  bottom: 18px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  color: rgba(255,255,255,0.85);
+  font-size: 14px;
+}
