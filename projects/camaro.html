@@ -31,7 +31,9 @@
       <section class="panel">
         <h1 style="margin-top:0;">1969 Camaro</h1>
         <p style="color:var(--muted); margin-top:6px; max-width:70ch;">
-          Hero photos for the project. Click the main image (or any thumbnail) to open the lightbox.
+          Stored near the ocean in Tampa, FL, this '69 Camaro needed major rust repair. 
+          Powered by a modern LM7 5.3L V8 and backed by a Gearstar 4L65E automatic transmission,
+          this car is a blast to drive and looks great doing it.
         </p>
 
         <!-- HERO GRID -->
@@ -86,13 +88,13 @@
             <div class="hero-thumb" data-index="9">
               <img src="https://vegemuaddgrumtftxwzv.supabase.co/storage/v1/object/public/projects/1969-camaro/hero/img_010.jpeg" alt="1969 Camaro thumbnail 10" loading="lazy" />
             </div>
+          </div>
         </div>
 
-        <!-- Optional next step link (you can wire this later) -->
-        <div style="margin-top:18px;">
+        <!-- Actions -->
+        <div class="panel-actions" style="margin-top:18px;">
           <a class="btn" href="../projects/index.html">← Back to Projects</a>
-          <!-- Later you can link to a full gallery page -->
-          <!-- <a class="btn primary" href="#">View Full Gallery</a> -->
+          <a class="btn primary" href="gallery/camaro_gallery.html">View Gallery →</a>
         </div>
       </section>
     </div>
@@ -125,7 +127,7 @@
     // Footer year
     document.getElementById("year").textContent = new Date().getFullYear();
 
-    // Hero images list (make sure these match your Supabase filenames)
+    // Hero images list, transperant background 
     const HERO_IMAGES = [
       "https://vegemuaddgrumtftxwzv.supabase.co/storage/v1/object/public/projects/1969-camaro/hero/img_001.jpeg",
       "https://vegemuaddgrumtftxwzv.supabase.co/storage/v1/object/public/projects/1969-camaro/hero/img_002.jpeg",
@@ -177,7 +179,7 @@
       openLightbox(currentIndex);
     }
 
-      // Click main image + thumbnails (robust)
+    // Click main image + thumbnails
     document.addEventListener("click", (e) => {
       const target = e.target.closest(".hero-main, .hero-thumb");
       if (!target) return;

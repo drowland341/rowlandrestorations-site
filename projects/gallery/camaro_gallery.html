@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>1969 Camaro Gallery | Rowland Restorations</title>
+  <link rel="stylesheet" href="../../assets/css/styles.css" />
+</head>
+
+<body>
+  <!-- NAV -->
+  <header class="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="../../index.html">
+        <span class="brand-badge" aria-hidden="true"></span>
+        <span>Rowland Restorations</span>
+      </a>
+
+      <nav class="nav-links">
+        <a href="../../projects/index.html">Projects</a>
+        <a href="../../learn/index.html">Learn</a>
+        <a href="../../about.html">About</a>
+        <a href="../../contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- PAGE -->
+  <main class="page">
+    <div class="container">
+      <section class="panel">
+        <div class="section-head" style="align-items:flex-start;">
+          <div>
+            <h1 style="margin:0;">1969 Camaro — Gallery</h1>
+            <p class="lead" style="margin-top:10px;">
+              Full build gallery pulled directly from Supabase. Click any image to open the lightbox.
+            </p>
+          </div>
+
+          <div class="btns" style="justify-content:flex-end;">
+            <a class="btn" href="../camaro.html">← Back to project</a>
+            <a class="btn" href="../index.html">All projects →</a>
+          </div>
+        </div>
+
+        <div class="gallery-toolbar" style="margin-top:14px; display:flex; gap:12px; align-items:center; justify-content:space-between; flex-wrap:wrap;">
+          <div id="galleryStatus" style="color:var(--muted);">Ready</div>
+          <button class="btn" id="loadMoreBtn" type="button">Load more</button>
+        </div>
+
+        <!-- Grid -->
+        <div
+          id="galleryGrid"
+          class="gallery-grid"
+          data-project="1969-camaro"
+          data-folder="gallery"
+          data-page-size="60"
+          style="margin-top:16px;"
+        ></div>
+
+        <!-- Bottom controls (natural after scrolling) -->
+        <div class="gallery-footer">
+          <button class="btn" id="loadMoreBtn" type="button">Load more</button>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-row">
+      <div>© <span id="year"></span> Rowland Restorations</div>
+      <div><a href="../../contact.html">Contact</a></div>
+    </div>
+  </footer>
+
+  <!-- LIGHTBOX -->
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <div class="lightbox__backdrop" id="lbBackdrop"></div>
+
+    <div class="lightbox__content">
+      <button class="lightbox__close" id="lbClose" aria-label="Close">✕</button>
+      <button class="lightbox__nav lightbox__prev" id="lbPrev" aria-label="Previous">‹</button>
+      <img class="lightbox__img" id="lbImg" alt="" />
+      <button class="lightbox__nav lightbox__next" id="lbNext" aria-label="Next">›</button>
+      <div class="lightbox__caption" id="lbCaption"></div>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+
+  <!-- IMPORTANT: env first, then gallery -->
+  <script src="../../assets/js/supabase.env.js"></script>
+  <script type="module" src="../../assets/js/gallery.js"></script>
+</body>
+</html>
