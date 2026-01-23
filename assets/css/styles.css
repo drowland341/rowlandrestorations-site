@@ -323,6 +323,112 @@ a:hover{color:var(--accent)}
 /* =========================
    Projects grid cards (image + text)
    ========================= */
+
+   /* =========================
+   ✅ Project page hero (main image + thumbnails)
+   Works with your camaro.html markup:
+   .hero-block > .hero-main + .hero-thumbs > .hero-thumb
+   ========================= */
+
+.hero-block{
+  margin-top: 18px;
+  display: grid;
+  grid-template-columns: 1fr 220px; /* main + thumbs rail */
+  gap: 14px;
+  align-items: start;
+}
+
+/* Main hero image */
+.hero-main{
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.12);
+  background: rgba(255,255,255,0.04);
+  box-shadow: 0 10px 30px rgba(0,0,0,.35);
+  cursor: pointer;
+}
+
+.hero-main img{
+  display:block;
+  width:100%;
+  height: 520px;         /* ✅ keeps it from getting insanely tall */
+  object-fit: cover;
+}
+
+/* Thumbnails column */
+.hero-thumbs{
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+  max-height: 520px;     /* match main image height */
+  overflow: auto;        /* ✅ scroll thumbs if there are many */
+  padding-right: 4px;
+}
+
+/* nice scrollbar without being loud */
+.hero-thumbs::-webkit-scrollbar{ width: 8px; }
+.hero-thumbs::-webkit-scrollbar-thumb{
+  background: rgba(255,255,255,0.10);
+  border-radius: 999px;
+}
+.hero-thumbs::-webkit-scrollbar-track{
+  background: rgba(255,255,255,0.04);
+  border-radius: 999px;
+}
+
+.hero-thumb{
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.12);
+  background: rgba(255,255,255,0.04);
+  box-shadow: 0 6px 18px rgba(0,0,0,.25);
+  cursor: pointer;
+  transition: transform .2s ease, border-color .2s ease, box-shadow .2s ease;
+}
+
+.hero-thumb:hover{
+  transform: translateY(-1px);
+  border-color: rgba(58,193,255,.45);
+  box-shadow: 0 10px 26px rgba(0,0,0,.35);
+}
+
+.hero-thumb img{
+  display:block;
+  width:100%;
+  height: 86px;
+  object-fit: cover;
+}
+
+/* Actions row on project pages (your "Back" + "View Gallery") */
+.panel-actions{
+  display:flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+/* Mobile: stack thumbs below main */
+@media (max-width: 900px){
+  .hero-block{
+    grid-template-columns: 1fr;
+  }
+
+  .hero-main img{
+    height: 360px;
+  }
+
+  .hero-thumbs{
+    grid-template-columns: repeat(5, minmax(90px, 1fr));
+    max-height: none;
+    overflow: auto;
+    padding-bottom: 4px;
+  }
+
+  .hero-thumb img{
+    height: 80px;
+  }
+}
+
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
