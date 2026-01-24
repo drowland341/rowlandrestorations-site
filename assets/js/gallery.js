@@ -1,6 +1,6 @@
 // assets/js/gallery.js
 // Requires: <script src="../../assets/js/supabase.env.js"></script> before this module
-// Expects: #galleryGrid + #galleryStatus + #loadMoreBtn on the page
+// Expects: #galleryGrid + #galleryStatus + (optional) #loadMoreBtn + (optional) #loadMoreBtnBottom
 
 const cfg = window.RR_SUPABASE;
 if (!cfg?.url || !cfg?.bucket || !cfg?.anonKey) {
@@ -9,7 +9,11 @@ if (!cfg?.url || !cfg?.bucket || !cfg?.anonKey) {
 
 const grid = document.getElementById("galleryGrid");
 const statusEl = document.getElementById("galleryStatus");
-const loadMoreBtn = document.getElementById("loadMoreBtn");
+
+// Support BOTH buttons
+const loadMoreBtnTop = document.getElementById("loadMoreBtn");
+const loadMoreBtnBottom = document.getElementById("loadMoreBtnBottom");
+const loadButtons = [loadMoreBtnTop, loadMoreBtnBottom].filter(Boolean);
 
 const project = grid?.dataset?.project;
 const folder = grid?.dataset?.folder || "gallery";
@@ -69,17 +73,19 @@ function setStatus(msg) {
 }
 
 function setButtonState() {
-  if (!loadMoreBtn) return;
+  // Update BOTH buttons
+  for (const btn of loadButtons) {
+    if (done) {
+      btn.textContent = "No more photos";
+      btn.disabled = true;
+      btn.style.opacity = "0.75";
+      continue;
+    }
 
-  if (done) {
-    loadMoreBtn.textContent = "No more photos";
-    loadMoreBtn.disabled = true;
-    loadMoreBtn.style.opacity = "0.75";
-    return;
+    btn.disabled = loading;
+    btn.textContent = loading ? "Loading…" : "Load more";
+    btn.style.opacity = "1";
   }
-
-  loadMoreBtn.disabled = loading;
-  loadMoreBtn.textContent = loading ? "Loading…" : "Load more";
 }
 
 function createTile(fullUrl, indexForLightbox) {
@@ -185,6 +191,7 @@ window.addEventListener("keydown", (e) => {
 
 async function loadNextPage() {
   if (loading || done) return;
+
   loading = true;
   setButtonState();
 
@@ -230,16 +237,16 @@ async function loadNextPage() {
   } catch (err) {
     console.error(err);
     setStatus(`Error loading photos (check console)`);
-    loading = false;
-    setButtonState();
-    return;
   } finally {
     loading = false;
     setButtonState();
   }
 }
 
-loadMoreBtn?.addEventListener("click", loadNextPage);
+// Bind BOTH buttons
+for (const btn of loadButtons) {
+  btn.addEventListener("click", loadNextPage);
+}
 
 // Initial load
 if (grid && project && cfg?.url && cfg?.bucket && cfg?.anonKey) {
