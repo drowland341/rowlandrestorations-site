@@ -9,7 +9,7 @@
   --max:1000px;
   --shadow: 0 10px 30px rgba(0,0,0,.35);
 
-  /* ✅ Adjust this to move the ambient strip LOWER */
+  /* Adjust this to move the ambient strip LOWER */
    /* Ambient tuning */
   --ambient-top: -120px;       /* move strip up (negative = higher) */
   --ambient-height: 410px;    /* make it taller/bigger */
@@ -72,7 +72,7 @@ a:hover{color:var(--accent)}
   padding:175px 0 28px;
   position: relative;
 
-  /* ✅ critical: prevents ambient + overlays from messing with hero-card */
+  /* prevents ambient + overlays from messing with hero-card */
   isolation: isolate;
 }
 
@@ -84,10 +84,10 @@ a:hover{color:var(--accent)}
   padding:34px;
   overflow:hidden;
   position:relative; 
-  z-index: 2; /* ✅ above ambient */
+  z-index: 2; /* above ambient */
 }
 
-/* ✅ ensure the glow sits behind the hero content */
+/* ensure the glow sits behind the hero content */
 .hero-card:before{
   content:"";
   position:absolute; inset:-120px -120px auto auto;
@@ -177,14 +177,14 @@ a:hover{color:var(--accent)}
 }
 
 /* =========================
-   ✅ Homepage (ambient strip behind hero)
+    Homepage (ambient strip behind hero)
    - Exists behind content
    - Gently auto-scrolls
    - Never clickable
    ========================= */
 
 /* =========================
-   ✅ Homepage (ambient strip behind hero) — BIGGER + TOP + MORE VISIBLE
+    Homepage (ambient strip behind hero) — BIGGER + TOP + MORE VISIBLE
    ========================= */
 
 .hero-ambient{
@@ -325,7 +325,7 @@ a:hover{color:var(--accent)}
    ========================= */
 
    /* =========================
-   ✅ Project page hero (main image + thumbnails)
+    Project page hero (main image + thumbnails)
    Works with your camaro.html markup:
    .hero-block > .hero-main + .hero-thumbs > .hero-thumb
    ========================= */
@@ -351,7 +351,7 @@ a:hover{color:var(--accent)}
 .hero-main img{
   display:block;
   width:100%;
-  height: 520px;         /* ✅ keeps it from getting insanely tall */
+  height: 520px;         /* keeps it from getting insanely tall */
   object-fit: cover;
 }
 
@@ -361,7 +361,7 @@ a:hover{color:var(--accent)}
   grid-template-columns: 1fr;
   gap: 10px;
   max-height: 520px;     /* match main image height */
-  overflow: auto;        /* ✅ scroll thumbs if there are many */
+  overflow: auto;        /* scroll thumbs if there are many */
   padding-right: 4px;
 }
 
@@ -557,7 +557,7 @@ a:hover{color:var(--accent)}
 .cta-row{ margin-top: 14px; display:flex; justify-content:center; }
 
 /* =========================
-   ✅ Gallery (Supabase) — robust fix (no jumbled tiles)
+   Gallery (Supabase) — robust fix (no jumbled tiles)
    ========================= */
 .gallery-status-row{
   display:flex;
