@@ -51,9 +51,9 @@ window.RR_PROJECTS = [
   },
   {
     id: "jetskis",
-    title: "Kawasaki Jet Skis",
+    title: "2006 Kawasaki STX-15F",
     page: "jetskis.html",
-    blurb: "ECU diagnostics + tuning experiments.",
+    blurb: "Restoration work, plus the example project for ECU diagnostics + tuning.",
     meta: "Photos + build overview",
     featured: true,
   },
