@@ -48,7 +48,8 @@ a:hover{color:var(--accent)}
 }
 .brand-badge{
   width:34px; height:34px; border-radius:10px;
-  background: linear-gradient(135deg, rgba(58,160,255,.9), rgba(58,160,255,.25));
+  background:#fff;
+  object-fit:cover; object-position: top center;
   box-shadow: var(--shadow);
   transition: transform 0.3s ease;
 }
