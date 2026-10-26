@@ -3,12 +3,12 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>K-line Logger | Rowland Restorations</title>
-  <meta name="description" content="Free Windows app that shows live engine data from Kawasaki jet skis through the diagnostic port and records ride logs." />
+  <title>PWC Scan | Rowland Restorations</title>
+  <meta name="description" content="Free Windows app for live data, a dashboard, fault codes, and datalogging on Kawasaki personal watercraft through the diagnostic port." />
   <link rel="stylesheet" href="assets/css/styles.css" />
   <link rel="icon" type="image/png" href="assets/images/favicon.png" />
   <style>
-    /* K-line Logger page only. Uses the site's colors and components from styles.css. */
+    /* PWC Scan page only. Uses the site's colors and components from styles.css. */
     .kl-hero {
       position: relative; overflow: hidden;
       display: grid; grid-template-columns: 1.2fr 1fr; gap: 28px; align-items: center;
@@ -21,9 +21,9 @@
     }
     .kl-hero > * { position: relative; }
     .kl-app { display: flex; align-items: center; gap: 10px; font-weight: 800; letter-spacing: .4px; }
-    .kl-app img { width: 34px; height: 34px; }
-    .kl-hero h1 { margin: 16px 0 12px; font-size: clamp(30px, 4vw, 46px); line-height: 1.08; max-width: 18ch; }
-    .kl-lede { margin: 0 0 22px; color: var(--muted); font-size: 18px; max-width: 52ch; }
+    .kl-app img { width: 34px; height: 34px; border-radius: 8px; }
+    .kl-hero h1 { margin: 16px 0 12px; font-size: clamp(30px, 4vw, 46px); line-height: 1.08; max-width: 20ch; }
+    .kl-lede { margin: 0 0 22px; color: var(--muted); font-size: 18px; max-width: 54ch; }
     .kl-download { gap: 10px; padding: 14px 22px; font-size: 18px; }
     .kl-download svg { width: 20px; height: 20px; }
     .kl-fine { margin: 14px 0 0; color: var(--muted); font-size: 14px; }
@@ -81,6 +81,7 @@
     .kl-note { margin: 18px 2px 0; color: var(--muted); font-size: 14px; }
     .kl-note a { color: var(--text); text-decoration: underline; text-underline-offset: 2px; }
     .kl-note a:hover { color: var(--accent); }
+    .kl-features { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; margin-top: 14px; }
     .nav-links a[aria-current="page"] { color: var(--text); background: rgba(255,255,255,.06); }
     a:focus-visible { outline: 2px solid rgba(58,193,255,.7); outline-offset: 2px; border-radius: 8px; }
 
@@ -90,6 +91,7 @@
       .kl-cols { grid-template-columns: 1fr; }
       .kl-connect .kl-steps { grid-template-columns: 1fr; gap: 0; }
       .kl-connect .kl-steps li { padding: 0 0 18px 46px; }
+      .kl-features { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -107,7 +109,7 @@
         <a href="learn/index.html">Learn</a>
         <a href="about.html">About</a>
         <a href="contact.html">Contact</a>
-        <a href="kline-logger.html" aria-current="page">K-line Logger</a>
+        <a href="pwc-scan.html" aria-current="page">PWC Scan</a>
       </nav>
     </div>
   </header>
@@ -119,21 +121,23 @@
       <section class="panel kl-hero">
         <div>
           <div class="kl-app">
-            <img src="assets/images/kline-logger-icon.png" alt="" />
-            <span>K-line Logger</span>
+            <img src="assets/images/pwc-scan-icon.png" alt="" />
+            <span>PWC Scan</span>
           </div>
-          <h1>Live engine data from your Kawasaki jet ski, on your PC.</h1>
+          <h1>Live data, a dashboard, and fault codes for your Kawasaki PWC.</h1>
           <p class="kl-lede">
             Plug a cable into the ski's diagnostic port and watch RPM, throttle, intake pressure,
-            temperatures and battery voltage as you ride. Save a log of each run to look at later.
+            temperatures and battery voltage as you ride — on live gauges, a chart, or an
+            at-a-glance dashboard. Read fault codes, log every run to CSV, and use the built-in
+            PID scanner to find sensors the app doesn't already know about.
           </p>
           <div class="btns">
-            <a class="btn primary kl-download" href="https://github.com/drowland341/kline-logger/releases/latest/download/KlineLogger-Setup.exe">
+            <a class="btn primary kl-download" href="https://github.com/drowland341/pwc-scan-desktop/releases/latest/download/PWCScan-Setup.exe">
               <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M11 3h2v10.2l3.6-3.6 1.4 1.4-6 6-6-6 1.4-1.4 3.6 3.6zM5 19h14v2H5z"/></svg>
               Download for Windows
             </a>
           </div>
-          <p class="kl-fine">Free and open source (<a href="https://github.com/drowland341/kline-logger" target="_blank" rel="noopener">source code on GitHub</a>). Works on Windows 10 and 11.</p>
+          <p class="kl-fine">Free and open source (<a href="https://github.com/drowland341/pwc-scan-desktop" target="_blank" rel="noopener">source code on GitHub</a>). Works on Windows 10 and 11.</p>
           <p class="kl-phone-note">You're on a phone. This app runs on a Windows computer, so open this page on your PC to download it.</p>
         </div>
 
@@ -155,12 +159,34 @@
         </svg>
       </section>
 
+      <section class="panel">
+        <h2>What's in the app</h2>
+        <div class="kl-features">
+          <div class="card">
+            <h3>Live data + dashboard</h3>
+            <p>Gauge tiles for every channel, a shared chart, and a garage-ready dashboard with warning/redline zones for revs, temp, battery and throttle.</p>
+          </div>
+          <div class="card">
+            <h3>Fault codes</h3>
+            <p>Reads current faults as the service codes your dash shows, with what they mean, likely causes, and which ECU pins to check.</p>
+          </div>
+          <div class="card">
+            <h3>PID scanner</h3>
+            <p>Finds sensors the built-in channel list doesn't already know about, and helps you figure out what each one measures.</p>
+          </div>
+          <div class="card">
+            <h3>Logging</h3>
+            <p>Records every ride to CSV with raw bytes included, so a log can be re-scaled later if a formula turns out wrong.</p>
+          </div>
+        </div>
+      </section>
+
       <div class="kl-cols">
         <section class="panel kl-needs">
           <h2>What you need</h2>
           <ul>
             <li>A Windows 10 or 11 computer</li>
-            <li>A USB K-line cable
+            <li>A USB OBD2 cable with K-line support
               <span class="hint">The blue KKL 409.1 cable with an FTDI chip works. It's often sold as a VAG or VCDS cable.</span></li>
             <li>A Kawasaki 4-pin to OBD2 adapter
               <span class="hint">Connects the cable to the ski's diagnostic plug.</span></li>
@@ -174,11 +200,11 @@
             <li><strong>Download the installer</strong>
               <span class="muted">Click Download for Windows. If your browser asks whether to keep the file, choose Keep.</span></li>
             <li><strong>Open it</strong>
-              <span class="muted">Double-click KlineLogger-Setup.exe in your Downloads folder.</span></li>
+              <span class="muted">Double-click PWCScan-Setup.exe in your Downloads folder.</span></li>
             <li><strong>Get past the Windows warning</strong>
               <div class="kl-callout">Windows may show a blue box that says <b>Windows protected your PC</b>. This is normal for new programs from small developers. Click <b>More info</b>, then <b>Run anyway</b>.</div></li>
             <li><strong>Finish</strong>
-              <span class="muted">Click Next through the installer. When it's done, K-line Logger has an icon on your desktop.</span></li>
+              <span class="muted">Click Next through the installer. When it's done, PWC Scan has an icon on your desktop.</span></li>
           </ol>
         </section>
       </div>
@@ -189,13 +215,13 @@
           <li>Plug the USB cable into your computer. Windows sets it up on its own, which can take a minute the first time.</li>
           <li>Connect the adapter to the ski's diagnostic plug, then the cable to the adapter.</li>
           <li>Turn the key on or press start so the ski's computer wakes up.</li>
-          <li>Open K-line Logger and press Connect. The light turns green when it's reading data.</li>
+          <li>Open PWC Scan and press Connect. The light turns green when it's reading data.</li>
         </ol>
         <p class="kl-tip">Want to look around first? Pick Demo in the Cable list to try the app without a ski.</p>
       </section>
 
       <p class="kl-note">
-        Stuck? <a href="contact.html">Get in touch</a>. K-line Logger is free under the MIT license.
+        Stuck? <a href="contact.html">Get in touch</a>. PWC Scan is free under the MIT license.
         Not affiliated with or endorsed by Kawasaki.
       </p>
 
