@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Privacy Policy | Rowland Restorations</title>
+  <meta name="description" content="Privacy policy for the PWC Scan apps (iOS, Android, Windows)." />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <link rel="icon" type="image/png" href="assets/images/favicon.png" />
+</head>
+<body>
+  <header class="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="index.html"><img class="brand-badge" src="assets/images/logo-mark.png" alt="" /><span>Rowland Restorations</span></a>
+      <nav class="nav-links">
+        <a href="projects/index.html">Projects</a>
+        <a href="learn/index.html">Learn</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <a href="pwc-scan.html">PWC Scan</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container page">
+    <div class="panel">
+      <h1>Privacy Policy — PWC Scan</h1>
+      <p style="color:var(--muted);">Last updated: November 2, 2026</p>
+
+      <p style="color:var(--muted); max-width:80ch;">
+        This policy covers the PWC Scan apps (iOS, Android, and Windows). The short version: PWC Scan doesn't
+        collect, transmit, sell, or share your personal data. There's no account, no analytics, and no ad
+        tracking. Everything the app reads stays on your device unless you personally choose to send it somewhere.
+      </p>
+
+      <h2 style="margin-top:22px;">What the app accesses, and why</h2>
+      <ul style="color:var(--muted); max-width:80ch;">
+        <li><b>Bluetooth / local Wi-Fi network</b> — used only to talk to your ELM327 adapter (e.g. a Veepeak
+          OBDCheck) so the app can read live data from your ski's ECU. This connection stays between your phone
+          and the adapter.</li>
+        <li><b>Location (GPS)</b> — used only to show your current speed on screen, so it can be compared against
+          the ski's own speed sensor. Your location is never recorded, stored, or sent anywhere off the device.</li>
+        <li><b>Files / storage</b> — CSV logs and exports are written to your device's local storage so you can
+          open or share them yourself. The app doesn't upload anything automatically.</li>
+      </ul>
+
+      <h2 style="margin-top:22px;">Research Logging (optional)</h2>
+      <p style="color:var(--muted); max-width:80ch;">
+        PWC Scan includes an optional Research Log feature that records ECU channel readings and GPS speed to a
+        CSV file on your device, intended to help identify what different sensors report across Kawasaki PWC
+        models. That file stays on your device unless you choose to send it — tapping "Email Log to Developer"
+        opens your phone's own Mail app with the file already attached and addressed to
+        <a href="mailto:doug@rowlandrestorations.com">doug@rowlandrestorations.com</a>, so you can review it
+        and decide whether to send it. Nothing is sent in the background or without that explicit action.
+      </p>
+
+      <h2 style="margin-top:22px;">Third parties</h2>
+      <p style="color:var(--muted); max-width:80ch;">
+        PWC Scan doesn't use any third-party analytics, advertising, or crash-reporting SDKs, and doesn't share
+        data with any third party. The only "third party" involved in a normal session is the ELM327 adapter
+        itself, which is hardware you own and connect to directly.
+      </p>
+
+      <h2 style="margin-top:22px;">Changes to this policy</h2>
+      <p style="color:var(--muted); max-width:80ch;">
+        If this policy changes, the "Last updated" date above will change too. Continued use of the app after an
+        update means you accept the current version of this policy.
+      </p>
+
+      <h2 style="margin-top:22px;">Contact</h2>
+      <p style="color:var(--muted); max-width:80ch;">
+        Questions about this policy or the app: <a href="mailto:doug@rowlandrestorations.com">doug@rowlandrestorations.com</a>.
+      </p>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-row">
+      <div>© <span id="year"></span> Rowland Restorations</div>
+      <div>
+        <a href="projects/index.html">Projects</a> ·
+        <a href="learn/index.html">Learn</a> ·
+        <a href="contact.html">Contact</a> ·
+        <a href="privacy.html">Privacy</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
